@@ -1,0 +1,158 @@
+********** MODEL NAME
+Proliferation-quiescence decision in response to DNA damage
+
+********** MODEL NOTES
+This model is decribed in the article:
+A comprehensive model for the proliferation-quiescence decision in response to endogenous DNA damage in human cells
+Frank S. Heldt, Alexis R. Barr, Sam Cooper, Chris Bakal, Bela Novak
+
+Abstract:
+Human cells that suffer mild DNA damage can enter a reversible state of growth arrest known as quiescence. This decision to temporarily exit the cell cycle is essential to prevent the propagation of mutations and most cancer cells harbour defects in the underlying control system. Here we present a mechanistic mathematical model to study the proliferation-quiescence decision in non-transformed human cells. We show that two bistable switches, the restriction point (RP) and the G1/S transition, mediate this decision by integrating DNA damage and mitogen signals. In particular, our data suggests that the cyclin-dependent kinase inhibitor p21 (Cip1/Waf1), which is expressed in response to DNA damage, promotes quiescence by blocking positive feedback loops that facilitate G1 progression downstream of serum stimulation. Intriguingly, cells exploit bistability in the RP to convert graded p21 and mitogen signals into an all-or-nothing cell cycle response. The same mechanism creates a window of opportunity where G1 cells that have passed the RP can revert to quiescence if exposed to DNA damage. We present experimental evidence that cells gradually lose this ability to revert to quiescence as they progress through G1 and that the onset of rapid p21 degradation at the G1/S transition prevents this response altogether, insulating S-phase from mild, endogenous DNA damage. Thus, two bistable switches conspire in the early cell cycle to provide both sensitivity and robustness to external stimuli.
+
+Programmer: Stefan Heldt, Last revised: 2017/12/12
+
+********** MODEL STATES
+d/dt(uRb)  = - rPhRb*uRb + kDpRb*pRb
+d/dt(tE2f) = rSyE2f - kDeE2f*tE2f
+d/dt(E2f)  = rSyE2f - kDeE2f*E2f - kAsRbE2f*Rb*E2f + (kDsRbE2f+rPhRb)*RbE2f
+
+d/dt(tE1)  = kSyE1 *E2f - kDeE1C1*E1C1  - kDeE1*E1
+d/dt(tP21) = kSyP21     + kSyP21P53*P53 - rDeP21*tP21
+d/dt(tCe)  = kSyCe *E2f                 - rDeCe*tCe
+d/dt(tCa)  = kSyCa *E2f                 - rDeCa*tCa
+
+d/dt(CeP21) = kAsCyP21*P21*Ce - (kDsCyP21+rDeCe+rDeP21)*CeP21
+d/dt(CaP21) = kAsCyP21*P21*Ca - (kDsCyP21+rDeCa+rDeP21)*CaP21
+
+d/dt(C1)   = - rPhC1*C1 + kDpC1*pC1 - kAsE1C1*E1*C1 + (kDsE1C1+kDeE1C1)*E1C1
+d/dt(E1C1) = - rPhC1*E1C1           + kAsE1C1*E1*C1 - (kDsE1C1+kDeE1C1)*E1C1
+
+d/dt(aPcna) = kImPc - kAsPcP21*P21*aPcna + (kDsPcP21+rDeP21)*iPcna - (kExPc+kAsRcPc*pRc)*aPcna + (kDsRcPc+rDsRc)*aRc
+d/dt(iPcna) =       + kAsPcP21*P21*aPcna - (kDsPcP21+rDeP21)*iPcna - (kExPc+kAsRcPc*pRc)*iPcna + (kDsRcPc+rDsRc)*iRc
+
+d/dt(Rc)  = - rPhRc*Rc + kDpRc*pRc                                                                     - rDsRc*Rc
+d/dt(pRc) =   rPhRc*Rc - kDpRc*pRc                     - kAsRcPc*(aPcna+iPcna)*pRc + kDsRcPc*(aRc+iRc) - rDsRc*pRc
+d/dt(aRc) = - kAsPcP21*P21*aRc + (kDsPcP21+rDeP21)*iRc + kAsRcPc* aPcna       *pRc - kDsRcPc*aRc       - rDsRc*aRc
+d/dt(iRc) =   kAsPcP21*P21*aRc - (kDsPcP21+rDeP21)*iRc + kAsRcPc*       iPcna *pRc - kDsRcPc*iRc       - rDsRc*iRc
+
+d/dt(Dna) = kSyDna*aRc
+
+d/dt(P53) = kSyP53 - rDeP53*P53
+d/dt(Dam) = kGeDam + kGeDamArc*aRc - rReDam*Dam
+
+d/dt(Pr)  = kSyPr - (kDePr + kDeCaC1*C1)*Pr
+
+tP21(0) = 0.6
+tCe(0)  = 0.5
+tCa(0)  = 1.2
+
+aPcna(0) = 0.5
+Rc(0)    = 1
+
+Pr(0) = 0.5
+
+********** MODEL PARAMETERS
+Cd   = 0.65         	%AU  relative CycD:Cdk4/6 level
+tRb  = 5             	%AU  total level of Rb
+tC1  = 1                %AU  total APC/C^Cdh1 level
+Skp2 = 1                %-  relative SCF^Skp2 level
+Cdt2 = 1                %-  relative CRL4^Cdt2 level
+
+kSyE2f    = 0.03        %AU/min  constitutive E2F synthesis
+kSyE2fE2f = 0.04        %AU/min  E2F-dependent E2F synthesis
+jSyE2f    = 0.2         %AU  Michealis-Menten constant for E2F synthesis
+kAsRbE2f  = 5           %1/(AU*min)  association of Rb and E2F
+kDsRbE2f  = 0.005       %1/min  dissociation of Rb:E2F complexes
+kDeE2f    = 0.05        %1/min  constiutive E2F degradation
+
+kPhRbCd   = 0.2         %1/(AU*min)  CycD:CDK4/6-mediated Rb phosphorylation
+kPhRbCe   = 0.3         %1/(AU*min)  CycE:CDK2-mediated Rb phosphorylation
+kPhRbCa   = 0.3         %1/(AU*min)  CycA:Cdk2-mediated Rb phosphorylation
+kDpRb     = 0.05        %1/min  dephosphorylation of Rb
+
+kSyE1   = 0.005         %1/min  constitutive Emi1 synthesis
+kDeE1C1 = 0.005         %1/min  Cdh1-mediated Emi1 degradation
+kDeE1   = 0.0005        %1/min  constitutive Emi1 degradation
+
+kPhC1   = 0             %1/min  constitutive Cdh1 phosphorylation
+kPhC1Ce = 0.01          %1/(AU*min)  CycE-mediated Cdh1 phosphorylation
+kPhC1Ca = 1             %1/(AU*min)  CycA-mediated Cdh1 phosphorylation
+kDpC1   = 0.05          %1/min  Cdh1 dephosphorylation
+kAsE1C1 = 10            %1/(AU*min)  association of Emi1 and Cdh1
+kDsE1C1 = 0.01          %1/min  dissociation of Emi1:Cdh1 complexes
+
+kSyP21    = 0.002       %AU/min  constitutive p21 synthesis
+kSyP21P53 = 0.008       %1/min  p53-dependent synthesis of p21
+kDeP21    = 0.0025      %1/min  constitutive p21 degradation
+kDeP21Cy  = 0.007       %1/(AU*min)  cyclin:CDK2-mediated p21 degradation (Skp2-dependent)
+kDeP21aRc = 1           %1/(AU*min)  aRC-mediated p21 degradation (Cdt2-dependent)
+
+kSyCe     = 0.01        %1/min  constitutive CycE synthesis
+kSyCa     = 0.02        %1/min  constitutive CycA synthesis
+kAsCyP21  = 1           %1/(AU*min)  association of cyclin:CDK2 and p21
+kDsCyP21  = 0.05        %1/min  dissociation of cyclin:CDK2:p21 complexes
+kDeCe     = 0.004       %1/min  constitutive CycE degradation
+kDeCa     = 0.01        %1/min  constitutive CycA degradation
+kDeCeCa   = 0.015       %1/(AU*min)  CycA:CDK2-mediated CycE degradation (Skp2-dependent)
+kDeCaC1   = 2           %1/(AU*min)  Cdh1-mediated CycA degradation
+
+kImPc     = 0.003       %AU/min  PCNA import into the nucleus
+kExPc     = 0.006       %1/min   PCNA export from the nucleus
+
+kPhRc     = 0.1         %1/min  cyclin:CDK2-mediated phosphorylation/priming of RCs
+kDpRc     = 0.05        %1/min  dephosphorylation of pRCs
+jCy       = 1.8         %AU  CDK2 threshold for the phosphorylation/priming of RCs
+n         = 6           %-  hill coefficient for the phosphorylation/priming of RCs
+kAsRcPc   = 0.01        %1/(AU*min)  association of phosphorylated/primed RCs and PCNA
+kDsRcPc   = 0.001       %1/min  dissociation of pRC:PCNA complexes
+kAsPcP21  = 100         %1/(AU*min)  association of PCNA and p21
+kDsPcP21  = 0.01        %1/min  dissociation of PCNA:p21 complexes
+kSyDna    = 0.0093      %1/min  DNA synthesis by aRCs
+
+kSyP53    = 0.05        %AU/min  constitutive p53 synthesis
+kDeP53    = 0.05        %AU/min  DNA damage-dependent degradation of p53
+jP53      = 0.01        %AU  inhibition constant of p53 degradation by DNA damage
+
+kGeDam    = 0.001       %AU/min  replication-independent DNA damage
+kGeDamArc = 0.012       %1/min  replication-dependent DNA damage
+kReDam    = 0.001       %1/min  p53-independent DNA damage repair
+kReDamP53 = 0.005       %1/min  p53-dependent DNA damage repair
+jDam      = 0.5         %AU  DNA damage threshold for repair
+
+kSyPr     = 0.01        %AU/min  constitutive synthesis of Cdh1-activity probe
+kDePr     = 0.0001      %1/min  constitutive degradation of Cdh1-activity probe
+
+rDsRc     = 0           %1/min  disassembly of replication complexes at the end of S-phase
+
+********** MODEL VARIABLES
+Rb    = uRb  - tE2f  + E2f      %AU  free, unphoshporylated Rb
+pRb   = tRb  - uRb              %AU  free, phosphorylated Rb
+RbE2f = tE2f - E2f              %AU  Rb:E2F complexes
+
+E1  = tE1  - E1C1                           %AU  free Emi1
+pC1 = tC1  - C1 - E1C1                      %AU  free, phosphorylated Cdh1
+Ce  = tCe  - CeP21                          %AU  free, active CycE
+Ca  = tCa  - CaP21                          %AU  free, active CycA
+P21 = tP21 - CeP21 - CaP21 - iPcna - iRc    %AU  free p21
+
+********** MODEL REACTIONS
+rSyE2f = kSyE2f + kSyE2fE2f*E2f / (jSyE2f + E2f)                %AU/min E2F synthesis
+rPhRb  = kPhRbCd*Cd + kPhRbCe*Ce + kPhRbCa*Ca                   %1/min  phosphorylation of Rb
+rPhRc  = kPhRc  *(Ce+Ca)^n / (jCy^n+(Ce+Ca)^n)                  %1/min  phosphorylation/priming of replication complexes
+rPhC1  = kPhC1 + kPhC1Ce*Ce + kPhC1Ca*Ca                        %1/min  Cdh1 phosphorylation
+
+rDeP21 = kDeP21 + kDeP21Cy*Skp2*(Ce+Ca) + kDeP21aRc*Cdt2*aRc 	%1/min  p21 degradation
+rDeCe  = kDeCe  + kDeCeCa*Ca                                 	%1/min  CycE degradation 
+rDeCa  = kDeCa  + kDeCaC1*C1                                	%1/min  CycA degradation
+
+rDeP53 = kDeP53 / (jP53 + Dam)                                  % p53 degradation
+rReDam = kReDam + kReDamP53*P53 / (jDam + Dam)                  % DNA damage repair
+
+********** MODEL FUNCTIONS
+
+
+********** MODEL EVENTS
+SphaseExit = ge(Dna, 1), rDsRc, 1
+
+********** MODEL MATLAB FUNCTIONS
+

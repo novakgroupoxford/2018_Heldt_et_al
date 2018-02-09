@@ -1,0 +1,185 @@
+### MODEL NAME
+# Proliferation-quiescence decision in response to DNA damage
+
+### MODEL NOTES
+# This model is decribed in the article:
+# A comprehensive model for the proliferation-quiescence decision in response to endogenous DNA damage in human cells
+# Frank S. Heldt, Alexis R. Barr, Sam Cooper, Chris Bakal, Bela Novak
+
+# Abstract:
+# Human cells that suffer mild DNA damage can enter a reversible state of growth arrest known as quiescence. This decision to temporarily exit the cell cycle is essential to prevent the propagation of mutations and most cancer cells harbour defects in the underlying control system. Here we present a mechanistic mathematical model to study the proliferation-quiescence decision in non-transformed human cells. We show that two bistable switches, the restriction point (RP) and the G1/S transition, mediate this decision by integrating DNA damage and mitogen signals. In particular, our data suggests that the cyclin-dependent kinase inhibitor p21 (Cip1/Waf1), which is expressed in response to DNA damage, promotes quiescence by blocking positive feedback loops that facilitate G1 progression downstream of serum stimulation. Intriguingly, cells exploit bistability in the RP to convert graded p21 and mitogen signals into an all-or-nothing cell cycle response. The same mechanism creates a window of opportunity where G1 cells that have passed the RP can revert to quiescence if exposed to DNA damage. We present experimental evidence that cells gradually lose this ability to revert to quiescence as they progress through G1 and that the onset of rapid p21 degradation at the G1/S transition prevents this response altogether, insulating S-phase from mild, endogenous DNA damage. Thus, two bistable switches conspire in the early cell cycle to provide both sensitivity and robustness to external stimuli.
+
+# Programmer: Stefan Heldt, Last revised: 2017/12/12
+
+### MODEL STATES
+uRb'  = - rPhRb*uRb + kDpRb*pRb
+tE2f' = rSyE2f - kDeE2f*tE2f
+E2f'  = rSyE2f - kDeE2f*E2f - kAsRbE2f*Rb*E2f + (kDsRbE2f+rPhRb)*RbE2f
+
+tE1'  = kSyE1 *E2f - kDeE1C1*E1C1  - kDeE1*E1
+tP21' = kSyP21     + kSyP21P53*P53 - rDeP21*tP21
+tCe'  = kSyCe *E2f                 - rDeCe*tCe
+tCa'  = kSyCa *E2f                 - rDeCa*tCa
+
+CeP21' = kAsCyP21*P21*Ce - (kDsCyP21+rDeCe+rDeP21)*CeP21
+CaP21' = kAsCyP21*P21*Ca - (kDsCyP21+rDeCa+rDeP21)*CaP21
+
+C1'   = - rPhC1*C1 + kDpC1*pC1 - kAsE1C1*E1*C1 + (kDsE1C1+kDeE1C1)*E1C1
+E1C1' = - rPhC1*E1C1           + kAsE1C1*E1*C1 - (kDsE1C1+kDeE1C1)*E1C1
+
+aPcna' = kImPc - kAsPcP21*P21*aPcna + (kDsPcP21+rDeP21)*iPcna - (kExPc+kAsRcPc*pRc)*aPcna + (kDsRcPc+rDsRc)*aRc
+iPcna' =         kAsPcP21*P21*aPcna - (kDsPcP21+rDeP21)*iPcna - (kExPc+kAsRcPc*pRc)*iPcna + (kDsRcPc+rDsRc)*iRc
+
+Rc'  = - rPhRc*Rc + kDpRc*pRc                                                                     - rDsRc*Rc
+pRc' =   rPhRc*Rc - kDpRc*pRc                     - kAsRcPc*(aPcna+iPcna)*pRc + kDsRcPc*(aRc+iRc) - rDsRc*pRc
+aRc' = - kAsPcP21*P21*aRc + (kDsPcP21+rDeP21)*iRc + kAsRcPc* aPcna       *pRc - kDsRcPc*aRc       - rDsRc*aRc
+iRc' =   kAsPcP21*P21*aRc - (kDsPcP21+rDeP21)*iRc + kAsRcPc*       iPcna *pRc - kDsRcPc*iRc       - rDsRc*iRc
+
+Dna' = kSyDna*aRc
+
+P53' = kSyP53 - rDeP53*P53
+Dam' = kGeDam + kGeDamArc*aRc - rReDam*Dam
+
+Pr'  = kSyPr - (kDePr + kDeCaC1*C1)*Pr
+
+### INITIAL CONDITIONS
+init tP21=0.6, aPcna=0.5, Rc=1
+init tCe=0.5,  tCa=1.2,   Pr=0.5
+
+### ALGEBRAIC EQUATIONS
+Rb    = uRb   - tE2f  + E2f
+pRb   = tRb   - uRb
+RbE2f = tE2f  - E2f
+
+Ce    = tCe   - CeP21
+Ca    = tCa   - CaP21
+E1    = tE1   - E1C1
+pC1   = tC1   - C1    - E1C1
+P21   = tP21  - CeP21 - CaP21 - iPcna - iRc
+tPcna = aPcna + iPcna + aRc + iRc
+
+### AUXILIARY QUANTITIES (for plotting purposes)
+aux Ce    = Ce
+aux Ca    = Ca
+aux P21   = P21
+aux tPcna = tPcna
+
+### REACTION RATES
+rSyE2f = kSyE2f + kSyE2fE2f*E2f / (jSyE2f + E2f)
+rPhRb  = kPhRbCd*Cd + kPhRbCe*Ce + kPhRbCa*Ca
+rPhRc  = kPhRc  *(Ce+Ca)^n / (jCy^n+(Ce+Ca)^n)
+rPhC1  = kPhC1 + kPhC1Ce*Ce + kPhC1Ca*Ca
+
+rDeP21 = kDeP21 + kDeP21Cy*Skp2*(Ce+Ca) + kDeP21aRc*Cdt2*aRc
+rDeCe  = kDeCe  + kDeCeCa*Ca
+rDeCa  = kDeCa  + kDeCaC1*C1
+
+rDeP53 = kDeP53 / (jP53 + Dam)
+rReDam = kReDam + kReDamP53*P53 / (jDam + Dam)
+
+rDsRc = heav(DNA-1)
+
+### MODEL PARAMETERS
+par Cd=0.65, tRb=5, tC1=1, Skp2=1, Cdt2=1
+
+par kSyE2f=0.03, kSyE2fE2f=0.04, jSyE2f=0.2,  kAsRbE2f=5, kDsRbE2f=0.005, kDeE2f=0.05
+par kPhRbCd=0.2, kPhRbCe=0.3,    kPhRbCa=0.3, kDpRb=0.05
+par kSyE1=0.005, kDeE1C1=0.005,  kDeE1=0.0005
+
+par kSyP21=0.002, kSyP21P53=0.008, kDeP21=0.0025, kDeP21Cy=0.007, kDeP21aRc=1
+par kSyCe=0.01,   kSyCa=0.02,      kAsCyP21=1,    kDsCyP21=0.05,
+par kDeCe=0.004,  kDeCa=0.01,      kDeCeCa=0.015, kDeCaC1=2
+
+par kPhC1=0,    kPhC1Ce=0.01, kPhC1Ca=1, kDpC1=0.05
+par kAsE1C1=10, kDsE1C1=0.01
+
+par kImPc=0.003,  kExPc=0.006,   kPhRc=0.1,    kDpRc=0.05,    jCy=1.8, n=6
+par kAsRcPc=0.01, kDsRcPc=0.001, kAsPcP21=100, kDsPcP21=0.01, kSyDna=0.0093
+
+par kSyP53=0.05,  kDeP53=0.05,     jP53=0.01
+par kGeDam=0.001, kGeDamArc=0.012, kReDam=0.001, kReDamP53=0.005, jDam=0.5
+
+par kSyPr=0.01, kDePr=0.0001
+
+### PARAMETER DESCRIPTION
+# Cd  (AU): relative CycD:Cdk4/6 level
+# tRb (AU): total level of Rb
+# tC1 (AU): total APC/C^Cdh1 level
+# Skp2 (-): relative SCF^Skp2 level
+# Cdt2 (-): relative CRL4^Cdt2 level
+
+# kSyE2f    (AU/min): constitutive E2F synthesis
+# kSyE2fE2f (AU/min): E2F-dependent E2F synthesis
+# jSyE2f    (AU): Michealis-Menten constant for E2F synthesis
+# kAsRbE2f  (1/(AU*min)): association of Rb and E2F
+# kDsRbE2f  (1/min): dissociation of Rb:E2F complexes
+# kDeE2f    (1/min):  constiutive E2F degradation
+
+# kPhRbCd (1/(AU*min)): CycD:CDK4/6-mediated Rb phosphorylation
+# kPhRbCe (1/(AU*min)): CycE:CDK2-mediated Rb phosphorylation
+# kPhRbCa (1/(AU*min)): CycA:Cdk2-mediated Rb phosphorylation
+# kDpRb   (1/min): dephosphorylation of Rb
+
+# kSyE1   (1/min):  constitutive Emi1 synthesis
+# kDeE1C1 (1/min):  Cdh1-mediated Emi1 degradation
+# kDeE1   (1/min):  constitutive Emi1 degradation
+
+# kSyP21 (1/min): constitutive p21 synthesis
+# kSyP21P53 (1/min): p53-dependent synthesis of p21
+# kDeP21 (1/min): constitutive p21 degradation
+# kDeP21Cy (1/(AU*min)): cyclin:CDK2-mediated p21 degradation (Skp2-dependent)
+# kDeP21aRc (1/(AU*min)): aRC-mediated p21 degradation (Cdt2-dependent)
+
+# kSyCe (1/min): constitutive CycE synthesis
+# kSyCa (1/min): constitutive CycA synthesis
+# kAsCyP21 (1/(AU*min)): association of cyclin:CDK2 and p21
+# kDsCyP21 (1/min): dissociation of cyclin:CDK2:p21 complexes
+# kDeCe (1/min): constitutive CycE degradation
+# kDeCa (1/min): constitutive CycA degradation
+# kDeCeCa (1/(AU*min)): CycA:CDK2-mediated CycE degradation (Skp2-dependent)
+# kDeCaC1 (1/(AU*min)): Cdh1-mediated CycA degradation
+
+# kPhC1 (1/min): constitutive Cdh1 phosphorylation
+# kPhC1Ce (1/(AU*min)): CycE-mediated Cdh1 phosphorylation
+# kPhC1Ca (1/(AU*min)): CycA-mediated Cdh1 phosphorylation
+# kDpC1 (1/min): Cdh1 dephosphorylation
+
+# kAsE1C1 (1/(AU*min)): association of Emi1 and Cdh1
+# kDsE1C1 (1/min): dissociation of Emi1:Cdh1 complexes
+
+# kImPc (AU/min): PCNA import into the nucleus
+# kExPc (1/min):  PCNA export from the nucleus
+
+# kPhRc (1/min): cyclin:CDK2-mediated phosphorylation/priming of RCs
+# kDpRc (1/min): dephosphorylation of pRCs
+# jCy (AU): CDK2 threshold for the phosphorylation/priming of RCs
+# n (-): hill coefficient for the phosphorylation/priming of RCs
+# kAsRcPc (1/(AU*min)): association of phosphorylated/primed RCs and PCNA
+# kDsRcPc (1/min): dissociation of pRC:PCNA complexes
+# kAsPcP21 (1/(AU*min)): association of PCNA and p21
+# kDsPcP21 (1/min): dissociation of PCNA:p21 complexes
+# kSyDna (1/min): DNA synthesis by active RCs
+
+# kSyP53 (1/min): constitutive p53 synthesis
+# kDeP53 (AU/min): DNA damage-dependent degradation of p53
+# jP53 (AU): inhibition constant of p53 degradation by DNA damage
+
+# kGeDam (AU/min): replication-independent DNA damage
+# kGeDamArc (1/min): replication-dependent DNA damage
+# kReDam (1/min): p53-independent DNA damage repair
+# kReDamP53 (1/min): p53-dependent DNA damage repair
+# jDam (AU): DNA damage threshold for repair
+
+# kSyPr (AU/min): constitutive synthesis of Cdh1-activity probe
+# kDePr (1/min): constitutive degradation of Cdh1-activity probe
+
+### XppAut SETTINGS
+@ Method=stiff, Total=1200, Bounds=100, Dt=1
+@ Xplot=t, Xlo=0, Xhi=1200, Ylo=0, Yhi=1.6
+@ Nplot=4, Yp1=tP21, Yp2=tCe, Yp3=tCa, Yp4=aRc
+
+@ Ntst=50, Nmax=1000000, Npr=1000
+@ Ds=.01, Dsmin=.001, Dsmax=.05, ParMin=-100, ParMax=2
+@ AutoVar=tP21, AutoXmin=0, AutoXmax=2, AutoYmin=0, AutoYmax=2
+
+done
