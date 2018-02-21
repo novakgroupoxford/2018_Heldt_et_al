@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created by COPASI version 4.20 (Build 158) on 2018-02-09 11:32 with libSBML version 5.15.1. -->
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1" xmlns:render="http://www.sbml.org/sbml/level3/version1/render/version1" level="3" version="1" layout:required="false" render:required="false">
-  <model metaid="COPASI0" id="Proliferation_quiescence_decision_in_response_to_DNA_damage" name="Proliferation-quiescence decision in response to DNA damage" substanceUnits="substance" timeUnits="time" volumeUnits="volume" areaUnits="area" lengthUnits="length" extentUnits="substance">
+<!-- Created by COPASI version 4.20 (Build 158) on 2018-02-21 09:36 with libSBML version 5.15.1. -->
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="COPASI0" id="Proliferation_quiescence_decision_in_response_to_DNA_damage" name="Proliferation-quiescence decision in response to DNA damage">
     <notes>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <pre>This model is decribed in the article:
 A comprehensive model for the proliferation-quiescence decision in response to endogenous DNA damage in human cells
 Frank S. Heldt, Alexis R. Barr, Sam Cooper, Chris Bakal, Bela Novak
+PNAS, February 2018, doi: 10.1073/pnas.1715345115
 
 Abstract:
 Human cells that suffer mild DNA damage can enter a reversible state of growth arrest known as quiescence. This decision to temporarily exit the cell cycle is essential to prevent the propagation of mutations and most cancer cells harbour defects in the underlying control system. Here we present a mechanistic mathematical model to study the proliferation-quiescence decision in non-transformed human cells. We show that two bistable switches, the restriction point (RP) and the G1/S transition, mediate this decision by integrating DNA damage and mitogen signals. In particular, our data suggests that the cyclin-dependent kinase inhibitor p21 (Cip1/Waf1), which is expressed in response to DNA damage, promotes quiescence by blocking positive feedback loops that facilitate G1 progression downstream of serum stimulation. Intriguingly, cells exploit bistability in the RP to convert graded p21 and mitogen signals into an all-or-nothing cell cycle response. The same mechanism creates a window of opportunity where G1 cells that have passed the RP can revert to quiescence if exposed to DNA damage. We present experimental evidence that cells gradually lose this ability to revert to quiescence as they progress through G1 and that the onset of rapid p21 degradation at the G1/S transition prevents this response altogether, insulating S-phase from mild, endogenous DNA damage. Thus, two bistable switches conspire in the early cell cycle to provide both sensitivity and robustness to external stimuli.</pre>
       </body>
     </notes>
     <annotation>
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+        <rdf:Description rdf:about="#COPASI0">
+          <dc:creator>
+            <rdf:Bag>
+              <rdf:li rdf:parseType="Resource">
+                <vCard:N rdf:parseType="Resource">
+                  <vCard:Family>Heldt</vCard:Family>
+                  <vCard:Given>Frank Stefan</vCard:Given>
+                </vCard:N>
+                <vCard:EMAIL>stefan.heldt@bioch.ox.ac.uk</vCard:EMAIL>
+                <vCard:ORG rdf:parseType="Resource">
+                  <vCard:Orgname>University of Oxford</vCard:Orgname>
+                </vCard:ORG>
+              </rdf:li>
+            </rdf:Bag>
+          </dc:creator>
+          <dcterms:created rdf:parseType="Resource">
+            <dcterms:W3CDTF>2017-03-01T11:13:07Z</dcterms:W3CDTF>
+          </dcterms:created>
+          <dcterms:modified rdf:parseType="Resource">
+            <dcterms:W3CDTF>2017-03-01T11:13:07Z</dcterms:W3CDTF>
+          </dcterms:modified>
+        </rdf:Description>
+      </rdf:RDF>
       <COPASI xmlns="http://www.copasi.org/static/sbml">
         <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#">
           <rdf:Description rdf:about="#COPASI0">
@@ -40,33 +65,9 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </rdf:Description>
         </rdf:RDF>
       </COPASI>
-      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-        <rdf:Description rdf:about="#COPASI0">
-          <dcterms:creator>
-            <rdf:Bag>
-              <rdf:li rdf:parseType="Resource">
-                <vCard:N rdf:parseType="Resource">
-                  <vCard:Family>Heldt</vCard:Family>
-                  <vCard:Given>Frank Stefan</vCard:Given>
-                </vCard:N>
-                <vCard:EMAIL>stefan.heldt@bioch.ox.ac.uk</vCard:EMAIL>
-                <vCard:ORG rdf:parseType="Resource">
-                  <vCard:Orgname>University of Oxford</vCard:Orgname>
-                </vCard:ORG>
-              </rdf:li>
-            </rdf:Bag>
-          </dcterms:creator>
-          <dcterms:created rdf:parseType="Resource">
-            <dcterms:W3CDTF>2017-03-01T11:13:07Z</dcterms:W3CDTF>
-          </dcterms:created>
-          <dcterms:modified rdf:parseType="Resource">
-            <dcterms:W3CDTF>2017-03-01T11:13:07Z</dcterms:W3CDTF>
-          </dcterms:modified>
-        </rdf:Description>
-      </rdf:RDF>
     </annotation>
     <listOfFunctionDefinitions>
-      <functionDefinition metaid="COPASI150" id="Constant_flux__irreversible" name="Constant flux (irreversible)">
+      <functionDefinition id="Constant_flux__irreversible" name="Constant flux (irreversible)">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
             <bvar>
@@ -76,19 +77,19 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </lambda>
         </math>
       </functionDefinition>
-      <functionDefinition metaid="COPASI151" id="rSyE2f" name="rSyE2f">
+      <functionDefinition metaid="COPASI137" id="rDeCe" name="rDeCe">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <pre>(AU/min) E2F synthesis</pre>
+            <pre>(1/min) CycE degradation</pre>
           </body>
         </notes>
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI151">
+              <rdf:Description rdf:about="#COPASI137">
                 <dcterms:created>
                   <rdf:Description>
-                    <dcterms:W3CDTF>2017-03-01T13:38:28Z</dcterms:W3CDTF>
+                    <dcterms:W3CDTF>2017-03-01T13:51:46Z</dcterms:W3CDTF>
                   </rdf:Description>
                 </dcterms:created>
               </rdf:Description>
@@ -98,38 +99,191 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
             <bvar>
-              <ci> kSyE2f </ci>
+              <ci> kDeCe </ci>
             </bvar>
             <bvar>
-              <ci> kSyE2fE2f </ci>
+              <ci> kDeCeCa </ci>
             </bvar>
             <bvar>
-              <ci> E2f </ci>
+              <ci> Ca </ci>
             </bvar>
             <bvar>
-              <ci> jSyE2f </ci>
+              <ci> S </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <ci> kDeCe </ci>
+                <apply>
+                  <times/>
+                  <ci> kDeCeCa </ci>
+                  <ci> Ca </ci>
+                </apply>
+              </apply>
+              <ci> S </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI138" id="rReDam" name="rReDam">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>(1/min) DNA damage repair</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI138">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2017-03-02T09:44:08Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> kReDam </ci>
+            </bvar>
+            <bvar>
+              <ci> kReDamP53 </ci>
+            </bvar>
+            <bvar>
+              <ci> P53 </ci>
+            </bvar>
+            <bvar>
+              <ci> jDam </ci>
+            </bvar>
+            <bvar>
+              <ci> Dam </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <ci> kReDam </ci>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> kReDamP53 </ci>
+                    <ci> P53 </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> jDam </ci>
+                    <ci> Dam </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> Dam </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI139" id="rPhC1" name="rPhC1">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>(1/min) Cdh1 phosphorylation</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI139">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2017-03-01T13:42:57Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> kPhC1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kPhC1Ce </ci>
+            </bvar>
+            <bvar>
+              <ci> Ce </ci>
+            </bvar>
+            <bvar>
+              <ci> kPhC1Ca </ci>
+            </bvar>
+            <bvar>
+              <ci> Ca </ci>
+            </bvar>
+            <bvar>
+              <ci> S </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <ci> kPhC1 </ci>
+                <apply>
+                  <times/>
+                  <ci> kPhC1Ce </ci>
+                  <ci> Ce </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kPhC1Ca </ci>
+                  <ci> Ca </ci>
+                </apply>
+              </apply>
+              <ci> S </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI140" id="rSyP21" name="rSyP21">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI140">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2017-03-01T15:14:42Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> kSyP21 </ci>
+            </bvar>
+            <bvar>
+              <ci> kSyP21P53 </ci>
+            </bvar>
+            <bvar>
+              <ci> P53 </ci>
             </bvar>
             <apply>
               <plus/>
-              <ci> kSyE2f </ci>
+              <ci> kSyP21 </ci>
               <apply>
-                <divide/>
-                <apply>
-                  <times/>
-                  <ci> kSyE2fE2f </ci>
-                  <ci> E2f </ci>
-                </apply>
-                <apply>
-                  <plus/>
-                  <ci> jSyE2f </ci>
-                  <ci> E2f </ci>
-                </apply>
+                <times/>
+                <ci> kSyP21P53 </ci>
+                <ci> P53 </ci>
               </apply>
             </apply>
           </lambda>
         </math>
       </functionDefinition>
-      <functionDefinition metaid="COPASI152" id="rDsRc" name="rDsRc">
+      <functionDefinition metaid="COPASI141" id="rDsRc" name="rDsRc">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(1/min) disassembly of replication complexes at the end of S-phase</pre>
@@ -138,7 +292,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI152">
+              <rdf:Description rdf:about="#COPASI141">
                 <dcterms:created>
                   <rdf:Description>
                     <dcterms:W3CDTF>2017-03-01T13:57:41Z</dcterms:W3CDTF>
@@ -192,7 +346,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </lambda>
         </math>
       </functionDefinition>
-      <functionDefinition metaid="COPASI153" id="rPhRb" name="rPhRb">
+      <functionDefinition metaid="COPASI142" id="rPhRb" name="rPhRb">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(1/min) phosphorylation of Rb</pre>
@@ -201,7 +355,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI153">
+              <rdf:Description rdf:about="#COPASI142">
                 <dcterms:created>
                   <rdf:Description>
                     <dcterms:W3CDTF>2017-03-01T13:40:20Z</dcterms:W3CDTF>
@@ -259,7 +413,60 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </lambda>
         </math>
       </functionDefinition>
-      <functionDefinition metaid="COPASI154" id="rPhRc" name="rPhRc">
+      <functionDefinition metaid="COPASI143" id="rSyE2f" name="rSyE2f">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>(AU/min) E2F synthesis</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI143">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2017-03-01T13:38:28Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> kSyE2f </ci>
+            </bvar>
+            <bvar>
+              <ci> kSyE2fE2f </ci>
+            </bvar>
+            <bvar>
+              <ci> E2f </ci>
+            </bvar>
+            <bvar>
+              <ci> jSyE2f </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <ci> kSyE2f </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kSyE2fE2f </ci>
+                  <ci> E2f </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> jSyE2f </ci>
+                  <ci> E2f </ci>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI144" id="rPhRc" name="rPhRc">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(1/min) phosphorylation/priming of replication complexes</pre>
@@ -268,7 +475,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI154">
+              <rdf:Description rdf:about="#COPASI144">
                 <dcterms:created>
                   <rdf:Description>
                     <dcterms:W3CDTF>2017-03-01T13:41:54Z</dcterms:W3CDTF>
@@ -338,7 +545,105 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </lambda>
         </math>
       </functionDefinition>
-      <functionDefinition metaid="COPASI155" id="rDeP21" name="rDeP21">
+      <functionDefinition metaid="COPASI145" id="rDeCa" name="rDeCa">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>(1/min) CycA degradation</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI145">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2017-03-01T13:52:27Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> kDeCa </ci>
+            </bvar>
+            <bvar>
+              <ci> kDeCaC1 </ci>
+            </bvar>
+            <bvar>
+              <ci> C1 </ci>
+            </bvar>
+            <bvar>
+              <ci> S </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <ci> kDeCa </ci>
+                <apply>
+                  <times/>
+                  <ci> kDeCaC1 </ci>
+                  <ci> C1 </ci>
+                </apply>
+              </apply>
+              <ci> S </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI146" id="rDeP53" name="rDeP53">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>(1/min) p53 degradation</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI146">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2017-03-02T09:39:03Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> kDeP53 </ci>
+            </bvar>
+            <bvar>
+              <ci> jP53 </ci>
+            </bvar>
+            <bvar>
+              <ci> Dam </ci>
+            </bvar>
+            <bvar>
+              <ci> P53 </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> kDeP53 </ci>
+                <apply>
+                  <plus/>
+                  <ci> jP53 </ci>
+                  <ci> Dam </ci>
+                </apply>
+              </apply>
+              <ci> P53 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI147" id="rDeP21" name="rDeP21">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(1/min)  p21 degradation</pre>
@@ -347,7 +652,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI155">
+              <rdf:Description rdf:about="#COPASI147">
                 <dcterms:created>
                   <rdf:Description>
                     <dcterms:W3CDTF>2017-03-01T13:43:53Z</dcterms:W3CDTF>
@@ -413,274 +718,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </lambda>
         </math>
       </functionDefinition>
-      <functionDefinition metaid="COPASI156" id="rDeCe" name="rDeCe">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <pre>(1/min) CycE degradation</pre>
-          </body>
-        </notes>
-        <annotation>
-          <COPASI xmlns="http://www.copasi.org/static/sbml">
-            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI156">
-                <dcterms:created>
-                  <rdf:Description>
-                    <dcterms:W3CDTF>2017-03-01T13:51:46Z</dcterms:W3CDTF>
-                  </rdf:Description>
-                </dcterms:created>
-              </rdf:Description>
-            </rdf:RDF>
-          </COPASI>
-        </annotation>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <lambda>
-            <bvar>
-              <ci> kDeCe </ci>
-            </bvar>
-            <bvar>
-              <ci> kDeCeCa </ci>
-            </bvar>
-            <bvar>
-              <ci> Ca </ci>
-            </bvar>
-            <bvar>
-              <ci> S </ci>
-            </bvar>
-            <apply>
-              <times/>
-              <apply>
-                <plus/>
-                <ci> kDeCe </ci>
-                <apply>
-                  <times/>
-                  <ci> kDeCeCa </ci>
-                  <ci> Ca </ci>
-                </apply>
-              </apply>
-              <ci> S </ci>
-            </apply>
-          </lambda>
-        </math>
-      </functionDefinition>
-      <functionDefinition metaid="COPASI157" id="rDeCa" name="rDeCa">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <pre>(1/min) CycA degradation</pre>
-          </body>
-        </notes>
-        <annotation>
-          <COPASI xmlns="http://www.copasi.org/static/sbml">
-            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI157">
-                <dcterms:created>
-                  <rdf:Description>
-                    <dcterms:W3CDTF>2017-03-01T13:52:27Z</dcterms:W3CDTF>
-                  </rdf:Description>
-                </dcterms:created>
-              </rdf:Description>
-            </rdf:RDF>
-          </COPASI>
-        </annotation>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <lambda>
-            <bvar>
-              <ci> kDeCa </ci>
-            </bvar>
-            <bvar>
-              <ci> kDeCaC1 </ci>
-            </bvar>
-            <bvar>
-              <ci> C1 </ci>
-            </bvar>
-            <bvar>
-              <ci> S </ci>
-            </bvar>
-            <apply>
-              <times/>
-              <apply>
-                <plus/>
-                <ci> kDeCa </ci>
-                <apply>
-                  <times/>
-                  <ci> kDeCaC1 </ci>
-                  <ci> C1 </ci>
-                </apply>
-              </apply>
-              <ci> S </ci>
-            </apply>
-          </lambda>
-        </math>
-      </functionDefinition>
-      <functionDefinition metaid="COPASI158" id="rPhC1" name="rPhC1">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <pre>(1/min) Cdh1 phosphorylation</pre>
-          </body>
-        </notes>
-        <annotation>
-          <COPASI xmlns="http://www.copasi.org/static/sbml">
-            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI158">
-                <dcterms:created>
-                  <rdf:Description>
-                    <dcterms:W3CDTF>2017-03-01T13:42:57Z</dcterms:W3CDTF>
-                  </rdf:Description>
-                </dcterms:created>
-              </rdf:Description>
-            </rdf:RDF>
-          </COPASI>
-        </annotation>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <lambda>
-            <bvar>
-              <ci> kPhC1 </ci>
-            </bvar>
-            <bvar>
-              <ci> kPhC1Ce </ci>
-            </bvar>
-            <bvar>
-              <ci> Ce </ci>
-            </bvar>
-            <bvar>
-              <ci> kPhC1Ca </ci>
-            </bvar>
-            <bvar>
-              <ci> Ca </ci>
-            </bvar>
-            <bvar>
-              <ci> S </ci>
-            </bvar>
-            <apply>
-              <times/>
-              <apply>
-                <plus/>
-                <ci> kPhC1 </ci>
-                <apply>
-                  <times/>
-                  <ci> kPhC1Ce </ci>
-                  <ci> Ce </ci>
-                </apply>
-                <apply>
-                  <times/>
-                  <ci> kPhC1Ca </ci>
-                  <ci> Ca </ci>
-                </apply>
-              </apply>
-              <ci> S </ci>
-            </apply>
-          </lambda>
-        </math>
-      </functionDefinition>
-      <functionDefinition metaid="COPASI159" id="rDeP53" name="rDeP53">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <pre>(1/min) p53 degradation</pre>
-          </body>
-        </notes>
-        <annotation>
-          <COPASI xmlns="http://www.copasi.org/static/sbml">
-            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI159">
-                <dcterms:created>
-                  <rdf:Description>
-                    <dcterms:W3CDTF>2017-03-02T09:39:03Z</dcterms:W3CDTF>
-                  </rdf:Description>
-                </dcterms:created>
-              </rdf:Description>
-            </rdf:RDF>
-          </COPASI>
-        </annotation>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <lambda>
-            <bvar>
-              <ci> kDeP53 </ci>
-            </bvar>
-            <bvar>
-              <ci> jP53 </ci>
-            </bvar>
-            <bvar>
-              <ci> Dam </ci>
-            </bvar>
-            <bvar>
-              <ci> P53 </ci>
-            </bvar>
-            <apply>
-              <times/>
-              <apply>
-                <divide/>
-                <ci> kDeP53 </ci>
-                <apply>
-                  <plus/>
-                  <ci> jP53 </ci>
-                  <ci> Dam </ci>
-                </apply>
-              </apply>
-              <ci> P53 </ci>
-            </apply>
-          </lambda>
-        </math>
-      </functionDefinition>
-      <functionDefinition metaid="COPASI160" id="rReDam" name="rReDam">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <pre>(1/min) DNA damage repair</pre>
-          </body>
-        </notes>
-        <annotation>
-          <COPASI xmlns="http://www.copasi.org/static/sbml">
-            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI160">
-                <dcterms:created>
-                  <rdf:Description>
-                    <dcterms:W3CDTF>2017-03-02T09:44:08Z</dcterms:W3CDTF>
-                  </rdf:Description>
-                </dcterms:created>
-              </rdf:Description>
-            </rdf:RDF>
-          </COPASI>
-        </annotation>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <lambda>
-            <bvar>
-              <ci> kReDam </ci>
-            </bvar>
-            <bvar>
-              <ci> kReDamP53 </ci>
-            </bvar>
-            <bvar>
-              <ci> P53 </ci>
-            </bvar>
-            <bvar>
-              <ci> jDam </ci>
-            </bvar>
-            <bvar>
-              <ci> Dam </ci>
-            </bvar>
-            <apply>
-              <times/>
-              <apply>
-                <plus/>
-                <ci> kReDam </ci>
-                <apply>
-                  <divide/>
-                  <apply>
-                    <times/>
-                    <ci> kReDamP53 </ci>
-                    <ci> P53 </ci>
-                  </apply>
-                  <apply>
-                    <plus/>
-                    <ci> jDam </ci>
-                    <ci> Dam </ci>
-                  </apply>
-                </apply>
-              </apply>
-              <ci> Dam </ci>
-            </apply>
-          </lambda>
-        </math>
-      </functionDefinition>
-      <functionDefinition metaid="COPASI161" id="rDePr" name="rDePr">
+      <functionDefinition metaid="COPASI148" id="rDePr" name="rDePr">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(1/min) degradation of APC/C^Cdh1 activity probe</pre>
@@ -689,7 +727,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI161">
+              <rdf:Description rdf:about="#COPASI148">
                 <dcterms:created>
                   <rdf:Description>
                     <dcterms:W3CDTF>2017-03-02T09:47:26Z</dcterms:W3CDTF>
@@ -729,55 +767,8 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </lambda>
         </math>
       </functionDefinition>
-      <functionDefinition metaid="COPASI162" id="rSyP21" name="rSyP21">
-        <annotation>
-          <COPASI xmlns="http://www.copasi.org/static/sbml">
-            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI162">
-                <dcterms:created>
-                  <rdf:Description>
-                    <dcterms:W3CDTF>2017-03-01T15:14:42Z</dcterms:W3CDTF>
-                  </rdf:Description>
-                </dcterms:created>
-              </rdf:Description>
-            </rdf:RDF>
-          </COPASI>
-        </annotation>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <lambda>
-            <bvar>
-              <ci> kSyP21 </ci>
-            </bvar>
-            <bvar>
-              <ci> kSyP21P53 </ci>
-            </bvar>
-            <bvar>
-              <ci> P53 </ci>
-            </bvar>
-            <apply>
-              <plus/>
-              <ci> kSyP21 </ci>
-              <apply>
-                <times/>
-                <ci> kSyP21P53 </ci>
-                <ci> P53 </ci>
-              </apply>
-            </apply>
-          </lambda>
-        </math>
-      </functionDefinition>
     </listOfFunctionDefinitions>
     <listOfUnitDefinitions>
-      <unitDefinition id="length" name="length">
-        <listOfUnits>
-          <unit kind="metre" exponent="1" scale="0" multiplier="1"/>
-        </listOfUnits>
-      </unitDefinition>
-      <unitDefinition id="area" name="area">
-        <listOfUnits>
-          <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
-        </listOfUnits>
-      </unitDefinition>
       <unitDefinition id="volume" name="volume">
         <listOfUnits>
           <unit kind="litre" exponent="1" scale="-3" multiplier="1"/>
@@ -795,7 +786,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
       </unitDefinition>
     </listOfUnitDefinitions>
     <listOfCompartments>
-      <compartment metaid="COPASI1" id="Cell" name="Cell" spatialDimensions="3" size="1" units="volume" constant="true">
+      <compartment metaid="COPASI1" id="Cell" name="Cell" spatialDimensions="3" size="1" constant="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -812,7 +803,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
       </compartment>
     </listOfCompartments>
     <listOfSpecies>
-      <species metaid="COPASI2" id="Rb" name="Rb" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI2" id="Rb" name="Rb" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) hypo-phosphorylated Rb</pre>
@@ -832,7 +823,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI3" id="pRb" name="pRb" compartment="Cell" initialConcentration="5" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI3" id="pRb" name="pRb" compartment="Cell" initialConcentration="5" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) hyper-phosphorylated Rb</pre>
@@ -852,7 +843,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI4" id="E2f" name="E2f" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI4" id="E2f" name="E2f" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) free, active E2F</pre>
@@ -872,7 +863,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI5" id="RbE2f" name="RbE2f" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI5" id="RbE2f" name="RbE2f" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) Rb:E2F complexes (inactive)</pre>
@@ -892,7 +883,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI6" id="E1" name="E1" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI6" id="E1" name="E1" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) free Emi1</pre>
@@ -912,7 +903,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI7" id="C1" name="C1" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI7" id="C1" name="C1" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) free, active APC/C^Cdh1</pre>
@@ -932,7 +923,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI8" id="pC1" name="pC1" compartment="Cell" initialConcentration="1" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI8" id="pC1" name="pC1" compartment="Cell" initialConcentration="1" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) phosphorylated APC/C^Cdh1 (inactive)</pre>
@@ -952,7 +943,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI9" id="E1C1" name="E1C1" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI9" id="E1C1" name="E1C1" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) Emi1:APC/C^Cdh1 complexes (inactive)</pre>
@@ -972,7 +963,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI10" id="P21" name="P21" compartment="Cell" initialConcentration="0.6" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI10" id="P21" name="P21" compartment="Cell" initialConcentration="0.6" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) free p21</pre>
@@ -992,7 +983,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI11" id="Ce" name="Ce" compartment="Cell" initialConcentration="0.5" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI11" id="Ce" name="Ce" compartment="Cell" initialConcentration="0.5" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) free, active CycE:Cdk2</pre>
@@ -1012,7 +1003,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI12" id="Ca" name="Ca" compartment="Cell" initialConcentration="1.2" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI12" id="Ca" name="Ca" compartment="Cell" initialConcentration="1.2" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) free, active CycA:Cdk2</pre>
@@ -1032,7 +1023,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI13" id="CeP21" name="CeP21" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI13" id="CeP21" name="CeP21" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) CycE:Cdk2:p21 complexes (inactive)</pre>
@@ -1052,7 +1043,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI14" id="CaP21" name="CaP21" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI14" id="CaP21" name="CaP21" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) CycA:Cdk2:p21 complexes (inactive)</pre>
@@ -1072,7 +1063,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI15" id="aPcna" name="aPcna" compartment="Cell" initialConcentration="0.5" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI15" id="aPcna" name="aPcna" compartment="Cell" initialConcentration="0.5" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) active, nuclear PCNA</pre>
@@ -1092,7 +1083,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI16" id="iPcna" name="iPcna" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI16" id="iPcna" name="iPcna" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) inactive, nuclear PCNA</pre>
@@ -1112,7 +1103,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI17" id="Rc" name="Rc" compartment="Cell" initialConcentration="1" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI17" id="Rc" name="Rc" compartment="Cell" initialConcentration="1" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) pre-replication complexes</pre>
@@ -1132,7 +1123,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI18" id="pRc" name="pRc" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI18" id="pRc" name="pRc" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) primed replication complexes</pre>
@@ -1152,7 +1143,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI19" id="aRc" name="aRc" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI19" id="aRc" name="aRc" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) active replication complexes</pre>
@@ -1172,7 +1163,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI20" id="iRc" name="iRc" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI20" id="iRc" name="iRc" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) inactive replication complexes</pre>
@@ -1192,7 +1183,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI21" id="Dna" name="Dna" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI21" id="Dna" name="Dna" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) DNA</pre>
@@ -1212,7 +1203,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI22" id="P53" name="P53" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI22" id="P53" name="P53" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) p53 transcription factor</pre>
@@ -1232,7 +1223,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI23" id="Dam" name="Dam" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI23" id="Dam" name="Dam" compartment="Cell" initialConcentration="0" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) DNA damage</pre>
@@ -1252,7 +1243,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI24" id="Pr" name="Pr" compartment="Cell" initialConcentration="0.5" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI24" id="Pr" name="Pr" compartment="Cell" initialConcentration="0.5" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) APC/C^Cdh1 activity probe</pre>
@@ -1272,7 +1263,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI25" id="tRb" name="tRb" compartment="Cell" initialConcentration="5" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false">
+      <species metaid="COPASI25" id="tRb" name="tRb" compartment="Cell" initialConcentration="5" boundaryCondition="true" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) total Rb protein</pre>
@@ -1292,7 +1283,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI26" id="tE2f" name="tE2f" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false">
+      <species metaid="COPASI26" id="tE2f" name="tE2f" compartment="Cell" initialConcentration="0" boundaryCondition="true" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) total E2F protein</pre>
@@ -1312,7 +1303,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI27" id="tE1" name="tE1" compartment="Cell" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false">
+      <species metaid="COPASI27" id="tE1" name="tE1" compartment="Cell" initialConcentration="0" boundaryCondition="true" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) total Emi1 protein</pre>
@@ -1332,7 +1323,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI28" id="tC1" name="tC1" compartment="Cell" initialConcentration="1" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false">
+      <species metaid="COPASI28" id="tC1" name="tC1" compartment="Cell" initialConcentration="1" boundaryCondition="true" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) total APC/C^Cdh1 protein</pre>
@@ -1352,7 +1343,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI29" id="tCe" name="tCe" compartment="Cell" initialConcentration="0.5" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false">
+      <species metaid="COPASI29" id="tCe" name="tCe" compartment="Cell" initialConcentration="0.5" boundaryCondition="true" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) total CycE:Cdk2</pre>
@@ -1372,7 +1363,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI30" id="tCa" name="tCa" compartment="Cell" initialConcentration="1.2" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false">
+      <species metaid="COPASI30" id="tCa" name="tCa" compartment="Cell" initialConcentration="1.2" boundaryCondition="true" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) total CycA:Cdk2</pre>
@@ -1392,7 +1383,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI31" id="tP21" name="tP21" compartment="Cell" initialConcentration="0.6" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false">
+      <species metaid="COPASI31" id="tP21" name="tP21" compartment="Cell" initialConcentration="0.6" boundaryCondition="true" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>(AU) total p21 protein</pre>
@@ -2574,6 +2565,15 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </apply>
         </math>
       </assignmentRule>
+      <assignmentRule variable="tCe">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> Ce </ci>
+            <ci> CeP21 </ci>
+          </apply>
+        </math>
+      </assignmentRule>
       <assignmentRule variable="tP21">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
@@ -2583,15 +2583,6 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
             <ci> CaP21 </ci>
             <ci> iPcna </ci>
             <ci> iRc </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule variable="tCe">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <plus/>
-            <ci> Ce </ci>
-            <ci> CeP21 </ci>
           </apply>
         </math>
       </assignmentRule>
@@ -2606,7 +2597,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
       </assignmentRule>
     </listOfRules>
     <listOfReactions>
-      <reaction metaid="COPASI88" id="Phosphorylation_of_Rb" name="Phosphorylation of Rb" reversible="false" fast="false">
+      <reaction metaid="COPASI88" id="Phosphorylation_of_Rb" name="Phosphorylation of Rb" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -2621,10 +2612,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="Rb" stoichiometry="1" constant="true"/>
+          <speciesReference species="Rb" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="pRb" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRb" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Ce"/>
@@ -2649,7 +2640,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI89" id="Phosphorylation_Rb_in_Rb_E2F_complexes" name="Phosphorylation Rb in Rb:E2F complexes" reversible="false" fast="false">
+      <reaction metaid="COPASI89" id="Phosphorylation_Rb_in_Rb_E2F_complexes" name="Phosphorylation Rb in Rb:E2F complexes" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -2664,11 +2655,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="RbE2f" stoichiometry="1" constant="true"/>
+          <speciesReference species="RbE2f" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="pRb" stoichiometry="1" constant="true"/>
-          <speciesReference species="E2f" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRb" stoichiometry="1"/>
+          <speciesReference species="E2f" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Ce"/>
@@ -2693,7 +2684,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI90" id="Dephosphorylation_of_Rb" name="Dephosphorylation of Rb" reversible="false" fast="false">
+      <reaction metaid="COPASI90" id="Dephosphorylation_of_Rb" name="Dephosphorylation of Rb" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -2708,10 +2699,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="pRb" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRb" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="Rb" stoichiometry="1" constant="true"/>
+          <speciesReference species="Rb" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2724,7 +2715,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI91" id="Synthesis_of_E2F" name="Synthesis of E2F" reversible="false" fast="false">
+      <reaction metaid="COPASI91" id="Synthesis_of_E2F" name="Synthesis of E2F" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -2739,7 +2730,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfProducts>
-          <speciesReference species="E2f" stoichiometry="1" constant="true"/>
+          <speciesReference species="E2f" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="E2f"/>
@@ -2760,7 +2751,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI92" id="Degradation_of_E2F" name="Degradation of E2F" reversible="false" fast="false">
+      <reaction metaid="COPASI92" id="Degradation_of_E2F" name="Degradation of E2F" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -2775,7 +2766,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="E2f" stoichiometry="1" constant="true"/>
+          <speciesReference species="E2f" stoichiometry="1"/>
         </listOfReactants>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2788,7 +2779,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI93" id="Degradation_of_E2F_in_Rb_E2F_complexes" name="Degradation of E2F in Rb:E2F complexes" reversible="false" fast="false">
+      <reaction metaid="COPASI93" id="Degradation_of_E2F_in_Rb_E2F_complexes" name="Degradation of E2F in Rb:E2F complexes" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -2803,10 +2794,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="RbE2f" stoichiometry="1" constant="true"/>
+          <speciesReference species="RbE2f" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="Rb" stoichiometry="1" constant="true"/>
+          <speciesReference species="Rb" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2819,7 +2810,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI94" id="Association_dissociation_of_Rb_and_E2F" name="Association/dissociation of Rb and E2F" reversible="true" fast="false">
+      <reaction metaid="COPASI94" id="Association_dissociation_of_Rb_and_E2F" name="Association/dissociation of Rb and E2F" reversible="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -2834,11 +2825,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="Rb" stoichiometry="1" constant="true"/>
-          <speciesReference species="E2f" stoichiometry="1" constant="true"/>
+          <speciesReference species="Rb" stoichiometry="1"/>
+          <speciesReference species="E2f" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="RbE2f" stoichiometry="1" constant="true"/>
+          <speciesReference species="RbE2f" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2863,7 +2854,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI95" id="Synthesis_of_p21" name="Synthesis of p21" reversible="false" fast="false">
+      <reaction metaid="COPASI95" id="Synthesis_of_p21" name="Synthesis of p21" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -2878,7 +2869,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfProducts>
-          <speciesReference species="P21" stoichiometry="1" constant="true"/>
+          <speciesReference species="P21" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="P53"/>
@@ -2898,7 +2889,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI96" id="Synthesis_of_CycE" name="Synthesis of CycE" reversible="false" fast="false">
+      <reaction metaid="COPASI96" id="Synthesis_of_CycE" name="Synthesis of CycE" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -2913,11 +2904,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="E2f" stoichiometry="1" constant="true"/>
+          <speciesReference species="E2f" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="E2f" stoichiometry="1" constant="true"/>
-          <speciesReference species="Ce" stoichiometry="1" constant="true"/>
+          <speciesReference species="E2f" stoichiometry="1"/>
+          <speciesReference species="Ce" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2930,7 +2921,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI97" id="Synthesis_of_CycA" name="Synthesis of CycA" reversible="false" fast="false">
+      <reaction metaid="COPASI97" id="Synthesis_of_CycA" name="Synthesis of CycA" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -2945,11 +2936,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="E2f" stoichiometry="1" constant="true"/>
+          <speciesReference species="E2f" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="E2f" stoichiometry="1" constant="true"/>
-          <speciesReference species="Ca" stoichiometry="1" constant="true"/>
+          <speciesReference species="E2f" stoichiometry="1"/>
+          <speciesReference species="Ca" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2962,7 +2953,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI98" id="Association_dissociation_of_CycE_Cdk2_and_p21" name="Association/dissociation of CycE:Cdk2 and p21" reversible="true" fast="false">
+      <reaction metaid="COPASI98" id="Association_dissociation_of_CycE_Cdk2_and_p21" name="Association/dissociation of CycE:Cdk2 and p21" reversible="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -2977,11 +2968,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="Ce" stoichiometry="1" constant="true"/>
-          <speciesReference species="P21" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ce" stoichiometry="1"/>
+          <speciesReference species="P21" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="CeP21" stoichiometry="1" constant="true"/>
+          <speciesReference species="CeP21" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3006,7 +2997,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI99" id="Association_dissociation_of_CycA_Cdk2_and_p21" name="Association/dissociation of CycA:Cdk2 and p21" reversible="true" fast="false">
+      <reaction metaid="COPASI99" id="Association_dissociation_of_CycA_Cdk2_and_p21" name="Association/dissociation of CycA:Cdk2 and p21" reversible="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3021,11 +3012,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="Ca" stoichiometry="1" constant="true"/>
-          <speciesReference species="P21" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ca" stoichiometry="1"/>
+          <speciesReference species="P21" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="CaP21" stoichiometry="1" constant="true"/>
+          <speciesReference species="CaP21" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3050,7 +3041,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI100" id="Degradation_of_p21_in_CycE_Cdk2_p21_complexes" name="Degradation of p21 in CycE:Cdk2:p21 complexes" reversible="false" fast="false">
+      <reaction metaid="COPASI100" id="Degradation_of_p21_in_CycE_Cdk2_p21_complexes" name="Degradation of p21 in CycE:Cdk2:p21 complexes" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3065,10 +3056,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="CeP21" stoichiometry="1" constant="true"/>
+          <speciesReference species="CeP21" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="Ce" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ce" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Ce"/>
@@ -3096,7 +3087,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI101" id="Degradation_of_p21_in_CycA_Cdk2_p21_complexes" name="Degradation of p21 in CycA:Cdk2:p21 complexes" reversible="false" fast="false">
+      <reaction metaid="COPASI101" id="Degradation_of_p21_in_CycA_Cdk2_p21_complexes" name="Degradation of p21 in CycA:Cdk2:p21 complexes" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3111,10 +3102,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="CaP21" stoichiometry="1" constant="true"/>
+          <speciesReference species="CaP21" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="Ca" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ca" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Ce"/>
@@ -3142,7 +3133,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI102" id="Degradation_of_CycE_in_CycE_Cdk2_complexes" name="Degradation of CycE in CycE:Cdk2 complexes" reversible="false" fast="false">
+      <reaction metaid="COPASI102" id="Degradation_of_CycE_in_CycE_Cdk2_complexes" name="Degradation of CycE in CycE:Cdk2 complexes" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3157,7 +3148,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="Ce" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ce" stoichiometry="1"/>
         </listOfReactants>
         <listOfModifiers>
           <modifierSpeciesReference species="Ca"/>
@@ -3178,7 +3169,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI103" id="Degradation_of_CycE_in_CycE_Cdk2_p21_complexes" name="Degradation of CycE in CycE:Cdk2:p21 complexes" reversible="false" fast="false">
+      <reaction metaid="COPASI103" id="Degradation_of_CycE_in_CycE_Cdk2_p21_complexes" name="Degradation of CycE in CycE:Cdk2:p21 complexes" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3193,10 +3184,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="CeP21" stoichiometry="1" constant="true"/>
+          <speciesReference species="CeP21" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="P21" stoichiometry="1" constant="true"/>
+          <speciesReference species="P21" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Ca"/>
@@ -3217,7 +3208,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI104" id="Degradation_of_CycA_in_CycA_Cdk2_complexes" name="Degradation of CycA in CycA:Cdk2 complexes" reversible="false" fast="false">
+      <reaction metaid="COPASI104" id="Degradation_of_CycA_in_CycA_Cdk2_complexes" name="Degradation of CycA in CycA:Cdk2 complexes" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3232,7 +3223,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="Ca" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ca" stoichiometry="1"/>
         </listOfReactants>
         <listOfModifiers>
           <modifierSpeciesReference species="C1"/>
@@ -3253,7 +3244,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI105" id="Degradation_of_CycA_in_CycA_Cdk2_p21_complexes" name="Degradation of CycA in CycA:Cdk2:p21 complexes" reversible="false" fast="false">
+      <reaction metaid="COPASI105" id="Degradation_of_CycA_in_CycA_Cdk2_p21_complexes" name="Degradation of CycA in CycA:Cdk2:p21 complexes" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3268,10 +3259,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="CaP21" stoichiometry="1" constant="true"/>
+          <speciesReference species="CaP21" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="P21" stoichiometry="1" constant="true"/>
+          <speciesReference species="P21" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="C1"/>
@@ -3292,7 +3283,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI106" id="Degradation_of_free_p21" name="Degradation of free p21" reversible="false" fast="false">
+      <reaction metaid="COPASI106" id="Degradation_of_free_p21" name="Degradation of free p21" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3307,7 +3298,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="P21" stoichiometry="1" constant="true"/>
+          <speciesReference species="P21" stoichiometry="1"/>
         </listOfReactants>
         <listOfModifiers>
           <modifierSpeciesReference species="Ce"/>
@@ -3335,7 +3326,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI107" id="Synthesis_of_Emi1" name="Synthesis of Emi1" reversible="false" fast="false">
+      <reaction metaid="COPASI107" id="Synthesis_of_Emi1" name="Synthesis of Emi1" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3350,11 +3341,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="E2f" stoichiometry="1" constant="true"/>
+          <speciesReference species="E2f" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="E2f" stoichiometry="1" constant="true"/>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="E2f" stoichiometry="1"/>
+          <speciesReference species="E1" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3367,7 +3358,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI108" id="Degradation_of_Emi1" name="Degradation of Emi1" reversible="false" fast="false">
+      <reaction metaid="COPASI108" id="Degradation_of_Emi1" name="Degradation of Emi1" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3382,7 +3373,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="E1" stoichiometry="1"/>
         </listOfReactants>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3395,7 +3386,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI109" id="Association_dissociation_of_Emi1_APC_C_Cdh1_complexes" name="Association/dissociation of Emi1:APC/C^Cdh1 complexes" reversible="true" fast="false">
+      <reaction metaid="COPASI109" id="Association_dissociation_of_Emi1_APC_C_Cdh1_complexes" name="Association/dissociation of Emi1:APC/C^Cdh1 complexes" reversible="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3410,11 +3401,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
-          <speciesReference species="C1" stoichiometry="1" constant="true"/>
+          <speciesReference species="E1" stoichiometry="1"/>
+          <speciesReference species="C1" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="E1C1" stoichiometry="1" constant="true"/>
+          <speciesReference species="E1C1" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3439,7 +3430,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI110" id="Degradation_of_Emi1_in_Emi1_APC_C_Cdh1_complexes" name="Degradation of Emi1 in Emi1:APC/C^Cdh1 complexes" reversible="false" fast="false">
+      <reaction metaid="COPASI110" id="Degradation_of_Emi1_in_Emi1_APC_C_Cdh1_complexes" name="Degradation of Emi1 in Emi1:APC/C^Cdh1 complexes" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3454,10 +3445,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="E1C1" stoichiometry="1" constant="true"/>
+          <speciesReference species="E1C1" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="C1" stoichiometry="1" constant="true"/>
+          <speciesReference species="C1" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3470,7 +3461,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI111" id="Phosphorylation_of_free_APC_C_Cdh1" name="Phosphorylation of free APC/C^Cdh1" reversible="false" fast="false">
+      <reaction metaid="COPASI111" id="Phosphorylation_of_free_APC_C_Cdh1" name="Phosphorylation of free APC/C^Cdh1" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3485,10 +3476,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="C1" stoichiometry="1" constant="true"/>
+          <speciesReference species="C1" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="pC1" stoichiometry="1" constant="true"/>
+          <speciesReference species="pC1" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Ce"/>
@@ -3512,7 +3503,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI112" id="Phosphorylation_of_APC_C_Cdh1_in_Emi1_APC_C_Cdh1_complexes" name="Phosphorylation of APC/C^Cdh1 in Emi1:APC/C^Cdh1 complexes" reversible="false" fast="false">
+      <reaction metaid="COPASI112" id="Phosphorylation_of_APC_C_Cdh1_in_Emi1_APC_C_Cdh1_complexes" name="Phosphorylation of APC/C^Cdh1 in Emi1:APC/C^Cdh1 complexes" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3527,11 +3518,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="E1C1" stoichiometry="1" constant="true"/>
+          <speciesReference species="E1C1" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
-          <speciesReference species="pC1" stoichiometry="1" constant="true"/>
+          <speciesReference species="E1" stoichiometry="1"/>
+          <speciesReference species="pC1" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Ce"/>
@@ -3555,7 +3546,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI113" id="Dephosphorylation_of_APC_C_Cdh1" name="Dephosphorylation of APC/C^Cdh1" reversible="false" fast="false">
+      <reaction metaid="COPASI113" id="Dephosphorylation_of_APC_C_Cdh1" name="Dephosphorylation of APC/C^Cdh1" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3570,10 +3561,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="pC1" stoichiometry="1" constant="true"/>
+          <speciesReference species="pC1" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="C1" stoichiometry="1" constant="true"/>
+          <speciesReference species="C1" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3586,7 +3577,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI114" id="Nuclear_import_of_active_PCNA" name="Nuclear import of active PCNA" reversible="false" fast="false">
+      <reaction metaid="COPASI114" id="Nuclear_import_of_active_PCNA" name="Nuclear import of active PCNA" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3601,7 +3592,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfProducts>
-          <speciesReference species="aPcna" stoichiometry="1" constant="true"/>
+          <speciesReference species="aPcna" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3616,7 +3607,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI115" id="Nuclear_export_of_active_PCNA" name="Nuclear export of active PCNA" reversible="false" fast="false">
+      <reaction metaid="COPASI115" id="Nuclear_export_of_active_PCNA" name="Nuclear export of active PCNA" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3631,7 +3622,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="aPcna" stoichiometry="1" constant="true"/>
+          <speciesReference species="aPcna" stoichiometry="1"/>
         </listOfReactants>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3644,7 +3635,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI116" id="Nuclear_export_of_inactive_PCNA" name="Nuclear export of inactive PCNA" reversible="false" fast="false">
+      <reaction metaid="COPASI116" id="Nuclear_export_of_inactive_PCNA" name="Nuclear export of inactive PCNA" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3659,10 +3650,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="iPcna" stoichiometry="1" constant="true"/>
+          <speciesReference species="iPcna" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="P21" stoichiometry="1" constant="true"/>
+          <speciesReference species="P21" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3675,7 +3666,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI117" id="Association_dissociation_of_PCNA_and_p21" name="Association/dissociation of PCNA and p21" reversible="true" fast="false">
+      <reaction metaid="COPASI117" id="Association_dissociation_of_PCNA_and_p21" name="Association/dissociation of PCNA and p21" reversible="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3690,11 +3681,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="aPcna" stoichiometry="1" constant="true"/>
-          <speciesReference species="P21" stoichiometry="1" constant="true"/>
+          <speciesReference species="aPcna" stoichiometry="1"/>
+          <speciesReference species="P21" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="iPcna" stoichiometry="1" constant="true"/>
+          <speciesReference species="iPcna" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3719,7 +3710,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI118" id="Degradation_of_p21_in_PCNA_p21_complexes" name="Degradation of p21 in PCNA:p21 complexes" reversible="false" fast="false">
+      <reaction metaid="COPASI118" id="Degradation_of_p21_in_PCNA_p21_complexes" name="Degradation of p21 in PCNA:p21 complexes" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3734,10 +3725,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="iPcna" stoichiometry="1" constant="true"/>
+          <speciesReference species="iPcna" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="aPcna" stoichiometry="1" constant="true"/>
+          <speciesReference species="aPcna" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Ce"/>
@@ -3765,7 +3756,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI119" id="Association_dissociation_of_active_PCNA_and_replication_complexes" name="Association/dissociation of active PCNA and replication complexes" reversible="true" fast="false">
+      <reaction metaid="COPASI119" id="Association_dissociation_of_active_PCNA_and_replication_complexes" name="Association/dissociation of active PCNA and replication complexes" reversible="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3780,11 +3771,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="aPcna" stoichiometry="1" constant="true"/>
-          <speciesReference species="pRc" stoichiometry="1" constant="true"/>
+          <speciesReference species="aPcna" stoichiometry="1"/>
+          <speciesReference species="pRc" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="aRc" stoichiometry="1" constant="true"/>
+          <speciesReference species="aRc" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3809,7 +3800,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI120" id="Association_dissociation_of_inactive_PCNA_and_replication_complexes" name="Association/dissociation of inactive PCNA and replication complexes" reversible="true" fast="false">
+      <reaction metaid="COPASI120" id="Association_dissociation_of_inactive_PCNA_and_replication_complexes" name="Association/dissociation of inactive PCNA and replication complexes" reversible="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3824,11 +3815,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="iPcna" stoichiometry="1" constant="true"/>
-          <speciesReference species="pRc" stoichiometry="1" constant="true"/>
+          <speciesReference species="iPcna" stoichiometry="1"/>
+          <speciesReference species="pRc" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="iRc" stoichiometry="1" constant="true"/>
+          <speciesReference species="iRc" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3853,7 +3844,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI121" id="Phosphorylation_priming_of_replication_complexes" name="Phosphorylation/priming of replication complexes" reversible="false" fast="false">
+      <reaction metaid="COPASI121" id="Phosphorylation_priming_of_replication_complexes" name="Phosphorylation/priming of replication complexes" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3868,10 +3859,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="Rc" stoichiometry="1" constant="true"/>
+          <speciesReference species="Rc" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="pRc" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRc" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Ce"/>
@@ -3895,7 +3886,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI122" id="Dephosphorylation_of_replication_complexes" name="Dephosphorylation of replication complexes" reversible="false" fast="false">
+      <reaction metaid="COPASI122" id="Dephosphorylation_of_replication_complexes" name="Dephosphorylation of replication complexes" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3910,10 +3901,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="pRc" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRc" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="Rc" stoichiometry="1" constant="true"/>
+          <speciesReference species="Rc" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3926,7 +3917,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI123" id="Association_dissociation_of_p21_and_replication_complexes" name="Association/dissociation of p21 and replication complexes" reversible="true" fast="false">
+      <reaction metaid="COPASI123" id="Association_dissociation_of_p21_and_replication_complexes" name="Association/dissociation of p21 and replication complexes" reversible="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3941,11 +3932,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="aRc" stoichiometry="1" constant="true"/>
-          <speciesReference species="P21" stoichiometry="1" constant="true"/>
+          <speciesReference species="aRc" stoichiometry="1"/>
+          <speciesReference species="P21" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="iRc" stoichiometry="1" constant="true"/>
+          <speciesReference species="iRc" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3970,7 +3961,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI124" id="Degradation_of_p21_in_inactive_replication_complexes" name="Degradation of p21 in inactive replication complexes" reversible="false" fast="false">
+      <reaction metaid="COPASI124" id="Degradation_of_p21_in_inactive_replication_complexes" name="Degradation of p21 in inactive replication complexes" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -3985,10 +3976,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="iRc" stoichiometry="1" constant="true"/>
+          <speciesReference species="iRc" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="aRc" stoichiometry="1" constant="true"/>
+          <speciesReference species="aRc" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Ce"/>
@@ -4016,7 +4007,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI125" id="Dissassembly_of_RC" name="Dissassembly of RC" reversible="false" fast="false">
+      <reaction metaid="COPASI125" id="Dissassembly_of_RC" name="Dissassembly of RC" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -4031,7 +4022,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="Rc" stoichiometry="1" constant="true"/>
+          <speciesReference species="Rc" stoichiometry="1"/>
         </listOfReactants>
         <listOfModifiers>
           <modifierSpeciesReference species="Dna"/>
@@ -4050,7 +4041,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI126" id="Dissassembly_of_pRC" name="Dissassembly of pRC" reversible="false" fast="false">
+      <reaction metaid="COPASI126" id="Dissassembly_of_pRC" name="Dissassembly of pRC" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -4065,7 +4056,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="pRc" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRc" stoichiometry="1"/>
         </listOfReactants>
         <listOfModifiers>
           <modifierSpeciesReference species="Dna"/>
@@ -4084,7 +4075,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI127" id="Dissassembly_of_aRC" name="Dissassembly of aRC" reversible="false" fast="false">
+      <reaction metaid="COPASI127" id="Dissassembly_of_aRC" name="Dissassembly of aRC" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -4099,10 +4090,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="aRc" stoichiometry="1" constant="true"/>
+          <speciesReference species="aRc" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="aPcna" stoichiometry="1" constant="true"/>
+          <speciesReference species="aPcna" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Dna"/>
@@ -4121,7 +4112,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI128" id="Dissassembly_of_iRC" name="Dissassembly of iRC" reversible="false" fast="false">
+      <reaction metaid="COPASI128" id="Dissassembly_of_iRC" name="Dissassembly of iRC" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -4136,10 +4127,10 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="iRc" stoichiometry="1" constant="true"/>
+          <speciesReference species="iRc" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="iPcna" stoichiometry="1" constant="true"/>
+          <speciesReference species="iPcna" stoichiometry="1"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Dna"/>
@@ -4158,7 +4149,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI129" id="Synthesis_of_DNA" name="Synthesis of DNA" reversible="false" fast="false">
+      <reaction metaid="COPASI129" id="Synthesis_of_DNA" name="Synthesis of DNA" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -4173,11 +4164,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="aRc" stoichiometry="1" constant="true"/>
+          <speciesReference species="aRc" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="aRc" stoichiometry="1" constant="true"/>
-          <speciesReference species="Dna" stoichiometry="1" constant="true"/>
+          <speciesReference species="aRc" stoichiometry="1"/>
+          <speciesReference species="Dna" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4190,7 +4181,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI130" id="Synthesis_of_p53" name="Synthesis of p53" reversible="false" fast="false">
+      <reaction metaid="COPASI130" id="Synthesis_of_p53" name="Synthesis of p53" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -4205,7 +4196,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfProducts>
-          <speciesReference species="P53" stoichiometry="1" constant="true"/>
+          <speciesReference species="P53" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4220,7 +4211,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI131" id="Degradation_of_p53" name="Degradation of p53" reversible="false" fast="false">
+      <reaction metaid="COPASI131" id="Degradation_of_p53" name="Degradation of p53" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -4235,7 +4226,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="P53" stoichiometry="1" constant="true"/>
+          <speciesReference species="P53" stoichiometry="1"/>
         </listOfReactants>
         <listOfModifiers>
           <modifierSpeciesReference species="Dam"/>
@@ -4256,7 +4247,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI132" id="Induction_of_DNA_damage" name="Induction of DNA damage" reversible="false" fast="false">
+      <reaction metaid="COPASI132" id="Induction_of_DNA_damage" name="Induction of DNA damage" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -4271,7 +4262,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfProducts>
-          <speciesReference species="Dam" stoichiometry="1" constant="true"/>
+          <speciesReference species="Dam" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4286,7 +4277,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI133" id="Induction_of_DNA_damage_by_replication" name="Induction of DNA damage by replication" reversible="false" fast="false">
+      <reaction metaid="COPASI133" id="Induction_of_DNA_damage_by_replication" name="Induction of DNA damage by replication" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -4301,11 +4292,11 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="aRc" stoichiometry="1" constant="true"/>
+          <speciesReference species="aRc" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="aRc" stoichiometry="1" constant="true"/>
-          <speciesReference species="Dam" stoichiometry="1" constant="true"/>
+          <speciesReference species="aRc" stoichiometry="1"/>
+          <speciesReference species="Dam" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4318,7 +4309,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI134" id="Synthesis_of_APC_C_Cdh1_activity_probe" name="Synthesis of APC/C^Cdh1 activity probe" reversible="false" fast="false">
+      <reaction metaid="COPASI134" id="Synthesis_of_APC_C_Cdh1_activity_probe" name="Synthesis of APC/C^Cdh1 activity probe" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -4333,7 +4324,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfProducts>
-          <speciesReference species="Pr" stoichiometry="1" constant="true"/>
+          <speciesReference species="Pr" stoichiometry="1"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4348,7 +4339,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI135" id="Degradation_of_APC_C_Cdh1_activity_probe" name="Degradation of APC/C^Cdh1 activity probe" reversible="false" fast="false">
+      <reaction metaid="COPASI135" id="Degradation_of_APC_C_Cdh1_activity_probe" name="Degradation of APC/C^Cdh1 activity probe" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -4363,7 +4354,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="Pr" stoichiometry="1" constant="true"/>
+          <speciesReference species="Pr" stoichiometry="1"/>
         </listOfReactants>
         <listOfModifiers>
           <modifierSpeciesReference species="C1"/>
@@ -4384,7 +4375,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="COPASI136" id="Repair_of_DNA_damage" name="Repair of DNA damage" reversible="false" fast="false">
+      <reaction metaid="COPASI136" id="Repair_of_DNA_damage" name="Repair of DNA damage" reversible="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -4399,7 +4390,7 @@ Human cells that suffer mild DNA damage can enter a reversible state of growth a
           </COPASI>
         </annotation>
         <listOfReactants>
-          <speciesReference species="Dam" stoichiometry="1" constant="true"/>
+          <speciesReference species="Dam" stoichiometry="1"/>
         </listOfReactants>
         <listOfModifiers>
           <modifierSpeciesReference species="P53"/>
