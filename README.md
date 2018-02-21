@@ -3,7 +3,7 @@
 Custom code for the article: <br>
 "A comprehensive model for the proliferation-quiescence decision in response to endogenous DNA damage in human cells" <br>
 Frank S. Heldt, Alexis R. Barr, Sam Cooper, Chris Bakal, Bela Novak <br>
-PNAS, 2018, in press.
+PNAS, February 2018, doi: 10.1073/pnas.1715345115
 
 This repository contains different versions of the mathematical model used in the article.
 
